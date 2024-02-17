@@ -1,0 +1,65 @@
+{
+  "name": "dirbato",
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/tmp/.ssh,type=bind,consistency=cached",
+    "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume" // named volume
+  ],
+  "dockerFile": "Dockerfile",
+  // "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind,consistency=cached",
+  // "workspaceFolder": "${localWorkspaceFolder}",
+  "remoteUser": "dirbato",
+  "updateRemoteUserUID": true,
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "6gb"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "donjayamanne.githistory",
+        "GitHub.vscode-pull-request-github",
+        "mosapride.zenkaku",
+        "oderwat.indent-rainbow",
+        "rvest.vs-code-prettier-eslint",
+        "streetsidesoftware.code-spell-checker",
+        "yzhang.markdown-all-in-one",
+        "42Crunch.vscode-openapi",
+        "eamodio.gitlens",
+        "firsttris.vscode-jest-runner",
+        "Arjun.swagger-viewer",
+        "redhat.vscode-yaml",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint"
+      ],
+      "settings": {
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit",
+          "source.fixAll.stylelint": "explicit"
+        },
+        "editor.formatOnSave": false,
+        "[javascript][javascriptreact][typescript][typescriptreact]": {
+          "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+          }
+        },
+        "[json][jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[yaml]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[css][scss]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": true
+          }
+        }
+      }
+    }
+  },
+  "postStartCommand": "bash ./.devcontainer/postStartCommand.sh"
+}

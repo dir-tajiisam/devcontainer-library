@@ -1,0 +1,18 @@
+body {
+  font-family: var(--font-notoSansJp), var(--font-inter), var(--font-roboto);
+}
+
+:root {
+  // color
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-navy: #072045;
+  --color-green: #1e99aa;
+  --color-orange: #ffb800;
+  --color-formFrame: #cdd2da;
+  --color-placeholder: #adb4c0;
+  --color-atomsBackground: #f4f4f4;
+  --color-error: #ff4d00;
+  // width
+  --pcMinWidth: 768px;
+}
