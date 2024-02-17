@@ -32,6 +32,26 @@ tests/test_sample.py .                                                          
 ======================================= 1 passed in 0.01s ========================================
 ```
 
+## Add/Remove Package
+
+- pyproject.toml に追加される
+
+```shell
+$ poetry add requests
+```
+
+- pyproject.toml から削除される
+
+```shell
+$ poetry remove requests
+```
+
+- 最後に以下を実行する
+
+```shell
+$ poetry install
+```
+
 # Troubleshooting
 
 ## Rebuild した場合に以下のエラーが発生

@@ -13,6 +13,7 @@ pytest = "^7.2.0"
 black = "^22.10.0"
 pyproject-flake8 = "^5.0.4.post1"
 mypy = "^1.7.0"
+requests = "^2.31.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
