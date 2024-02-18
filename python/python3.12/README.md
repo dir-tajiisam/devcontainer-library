@@ -20,16 +20,17 @@ Buzz
 
 ```shell
 $  python -m pytest tests
-====================================== test session starts =======================================
-platform linux -- Python 3.11.6, pytest-7.4.4, pluggy-1.4.0
-rootdir: /workspaces/devcontainer-library/python/python3.11
+========================================== test session starts ==========================================
+platform linux -- Python 3.12.2, pytest-8.0.1, pluggy-1.4.0
+rootdir: /workspaces/devcontainer-library/python/python3.12
 configfile: pyproject.toml
 plugins: mock-3.12.0, requests-mock-1.11.0
 collected 1 item
 
-tests/test_sample.py .                                                                     [100%]
+tests/test_sample.py .                                                                            [100%]
 
-======================================= 1 passed in 0.01s ========================================
+=========================================== 1 passed in 0.01s ===========================================
+
 ```
 
 ## Add/Remove Package
@@ -61,3 +62,11 @@ $ poetry install
 Reload Window を実行する
 
 ![alt text](images/image2.png)
+
+# 構築時のメモ
+
+```shell
+$ poetry add requests
+$ poetry add --dev pytest pytest-mock requests-mock black pyproject-flake8 mypy
+$ poetry install
+```

@@ -1,0 +1,40 @@
+{
+  "name": "Java Template",
+  "dockerFile": "./Dockerfile",
+  "remoteUser": "dirbato",
+  "updateRemoteUserUID": true,
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "donjayamanne.githistory",
+        "mosapride.zenkaku",
+        "njpwerner.autodocstring",
+        "oderwat.indent-rainbow",
+        "rvest.vs-code-prettier-eslint",
+        "streetsidesoftware.code-spell-checker",
+        "yzhang.markdown-all-in-one",
+        "42Crunch.vscode-openapi",
+        "eamodio.gitlens",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-gradle",
+        "redhat.java"
+      ],
+      "settings": {
+        "defaultFormatter": "esbenp.prettier-vscode",
+        "[java]": {
+          "editor.defaultFormatter": "redhat.java",
+          "editor.formatOnSave": true
+        },
+        "java.compile.nullAnalysis.mode": "automatic",
+        "java.configuration.updateBuildConfiguration": "automatic"
+      
+      }
+    }
+  },
+  "postStartCommand": "bash ./.devcontainer/postStartCommand.sh"
+}

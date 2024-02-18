@@ -11,3 +11,9 @@
 2. Dev Container: Rebuild container を実行する
 
 ![alt text](images/image1.png)
+
+## 終了方法
+
+1. Dev Container: Reopen Folder Locally を実行する
+
+![alt text](images/image2.png)
