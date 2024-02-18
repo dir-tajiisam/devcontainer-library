@@ -1,0 +1,39 @@
+{
+  "name": "Go Template",
+  "dockerFile": "./Dockerfile",
+  "remoteUser": "dirbato",
+  "updateRemoteUserUID": true,
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "donjayamanne.githistory",
+        "mosapride.zenkaku",
+        "njpwerner.autodocstring",
+        "oderwat.indent-rainbow",
+        "rvest.vs-code-prettier-eslint",
+        "streetsidesoftware.code-spell-checker",
+        "yzhang.markdown-all-in-one",
+        "42Crunch.vscode-openapi",
+        "eamodio.gitlens",
+        "golang.go"
+      ],
+      "settings": {
+        "defaultFormatter": "esbenp.prettier-vscode",
+        "[go]": {
+          "editor.insertSpaces": false,
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+          },
+          "editor.defaultFormatter": "golang.go"
+        }
+      }
+    }
+  },
+  "postStartCommand": "bash ./.devcontainer/postStartCommand.sh"
+}
