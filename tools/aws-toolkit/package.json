@@ -1,7 +1,7 @@
 {
-  "name": "terraform-template",
+  "name": "aws-toolkit-template",
   "version": "0.1.0",
-  "description": "terraform template",
+  "description": "aws toolkit template",
   "private": true,
   "scripts": {
     "docs": "terraform-docs md . > 'TERRAFORM.md'",
