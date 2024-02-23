@@ -1,0 +1,36 @@
+{
+  "name": "Azure Toolkit Template",
+  "dockerFile": "./Dockerfile",
+  "remoteUser": "dirbato",
+  "updateRemoteUserUID": true,
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "donjayamanne.githistory",
+        "mosapride.zenkaku",
+        "njpwerner.autodocstring",
+        "oderwat.indent-rainbow",
+        "rvest.vs-code-prettier-eslint",
+        "streetsidesoftware.code-spell-checker",
+        "yzhang.markdown-all-in-one",
+        "42Crunch.vscode-openapi",
+        "eamodio.gitlens",
+        "hashicorp.terraform",
+        "hashicorp.hcl"
+      ],
+      "settings": {
+        "defaultFormatter": "esbenp.prettier-vscode",
+        "[terraform]": {
+          "editor.defaultFormatter": "hashicorp.terraform",
+          "editor.formatOnType": true
+        }
+      }
+    }
+  },
+  "postStartCommand": "bash ./.devcontainer/postStartCommand.sh"
+}
