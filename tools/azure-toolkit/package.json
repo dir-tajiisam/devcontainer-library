@@ -1,0 +1,17 @@
+{
+  "name": "azure-toolkit-template",
+  "version": "0.1.0",
+  "description": "Azure Toolkit template",
+  "private": true,
+  "scripts": {
+    "docs": "terraform-docs md . > 'TERRAFORM.md'",
+    "lint": "tflint"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^2.8.3"
+  },
+  "dependencies": {
+    "npx": "^10.2.2"
+  }
+}

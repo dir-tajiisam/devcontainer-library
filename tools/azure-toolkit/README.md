@@ -1,5 +1,17 @@
 # How To Use
 
+## Azure CLI
+
+```sh
+az login
+```
+
+## (開発者向け)Azure Developer CLI
+
+```sh
+azd auth login
+```
+
 ## Hello World
 
 ローカルに`hello.txt`を作成する Terraform
