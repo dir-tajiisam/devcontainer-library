@@ -4,14 +4,14 @@
 USER=$(whoami)
 
 # .ssh
-cp -r /tmp/.ssh $HOME
-chown -R $USER:$USER $HOME/.ssh
-chmod 600 $HOME/.ssh/*
+# cp -r /tmp/.ssh $HOME
+# chown -R $USER:$USER $HOME/.ssh
+# chmod 600 $HOME/.ssh/*
 
 # node_modules
-mkdir -p node_modules && \
-sudo chown $USER node_modules && \
-npm ci
+# mkdir -p node_modules && \
+# sudo chown $USER node_modules && \
+# npm ci
 
 # npm.certs.pemがなかったら作る
 if [ ! -e ~/.npm.certs.pem ]; then

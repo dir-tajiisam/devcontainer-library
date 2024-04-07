@@ -1,13 +1,13 @@
 {
   "name": "dirbato",
   "mounts": [
-    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/tmp/.ssh,type=bind,consistency=cached",
-    "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume" // named volume
+    // "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/tmp/.ssh,type=bind,consistency=cached",
+    // "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume" // named volume
   ],
   "dockerFile": "Dockerfile",
-  // "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind,consistency=cached",
-  // "workspaceFolder": "${localWorkspaceFolder}",
-  "remoteUser": "dirbato",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  // "remoteUser": "dirbato",
   "updateRemoteUserUID": true,
   "hostRequirements": {
     "cpus": 2,
