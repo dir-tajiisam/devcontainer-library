@@ -1,7 +1,7 @@
 {
   "name": "Python Template",
   "dockerFile": "./Dockerfile",
-  "remoteUser": "dirbato",
+  // "remoteUser": "dirbato",
   "updateRemoteUserUID": true,
   "hostRequirements": {
     "cpus": 2,

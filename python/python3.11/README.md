@@ -3,7 +3,7 @@
 ## Hello World
 
 ```shell
-$ python src/sample.py 10
+$ poetry run python src/sample.py 10
 1
 2
 Fizz
@@ -19,7 +19,7 @@ Buzz
 ## Run Test
 
 ```shell
-$  python -m pytest tests
+$ poetry run python -m pytest tests
 ====================================== test session starts =======================================
 platform linux -- Python 3.11.6, pytest-7.4.4, pluggy-1.4.0
 rootdir: /workspaces/devcontainer-library/python/python3.11

@@ -1,12 +1,19 @@
 {
   "name": "Terraform Template",
+  "mounts": [
+    // "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/tmp/.ssh,type=bind,consistency=cached",
+    // "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume", // named volume
+    // "source=${localWorkspaceFolderBasename}-terraform,target=${containerWorkspaceFolder}/.terraform,type=volume" // named volume
+  ],
   "dockerFile": "./Dockerfile",
-  "remoteUser": "dirbato",
+  // "workspaceFolder": "/workspace",
+  // "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  // "remoteUser": "dirbato",
   "updateRemoteUserUID": true,
-  "hostRequirements": {
-    "cpus": 2,
-    "memory": "4gb"
-  },
+  // "hostRequirements": {
+  //   "cpus": 2,
+  //   "memory": "4gb"
+  // },
   "customizations": {
     "vscode": {
       "extensions": [

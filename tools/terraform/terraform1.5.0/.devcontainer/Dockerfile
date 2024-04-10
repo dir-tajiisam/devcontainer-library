@@ -7,7 +7,7 @@ ENV TFLINT_VERSION=0.47.0
 ENV NVM_VERSION=0.39.0
 ENV NODE_VERSION=18
 ENV CATO_CERTIFICATION_PATH=/usr/share/ca-certificates/CatoNetworksTrustedRootCA.pem
-ENV USER=dirbato
+# ENV USER=dirbato
 
 ## For Ubuntu
 RUN apt-get update -y && apt-get upgrade -y && \
@@ -40,17 +40,18 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/instal
     npm --version && \
     npm install -g npm@latest
 # User
-RUN addgroup --system ${USER} && \
-    adduser --system --ingroup ${USER} --shell /bin/bash --home /home/${USER} ${USER} && \
-    cp ~/.bashrc /home/${USER}/.bashrc && \
-    cp -r ~/.nvm /home/${USER}/.nvm && \
-    chown -R ${USER}:${USER} /home/${USER} && \
-    echo "${USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
-    echo 'Defaults env_keep +="PATH"' >> /etc/sudoers && \
-    sed -i '/secure_path/d' /etc/sudoers
+# RUN addgroup --system ${USER} && \
+#     adduser --system --ingroup ${USER} --shell /bin/bash --home /home/${USER} ${USER} && \
+#     cp ~/.bashrc /home/${USER}/.bashrc && \
+#     cp -r ~/.nvm /home/${USER}/.nvm && \
+#     chown -R ${USER}:${USER} /home/${USER} && \
+#     echo "${USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
+#     echo 'Defaults env_keep +="PATH"' >> /etc/sudoers && \
+#     sed -i '/secure_path/d' /etc/sudoers
 
 # starship
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y && \
-    echo 'eval "$(starship init bash)"' >> /home/${USER}/.bashrc
+    echo 'eval "$(starship init bash)"' >> ~/.bashrc
+    # echo 'eval "$(starship init bash)"' >> /home/${USER}/.bashrc
 
-USER ${USER}
+# USER ${USER}

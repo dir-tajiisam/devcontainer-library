@@ -1,7 +1,7 @@
 {
   "name": "Python Template",
   "dockerFile": "./Dockerfile",
-  "remoteUser": "dirbato",
+  // "remoteUser": "dirbato",
   "updateRemoteUserUID": true,
   "hostRequirements": {
     "cpus": 2,
@@ -50,10 +50,10 @@
         "mypy-type-checker.args": ["--ignore-missing-imports", "--disallow-untyped-defs"],
         "[TypeScript]": {
           "editor.formatOnSave": true,
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
         }
       }
     }
   },
-  "postStartCommand": "bash ./.devcontainer/postStartCommand.sh",
+  "postStartCommand": "bash ./.devcontainer/postStartCommand.sh"
 }
