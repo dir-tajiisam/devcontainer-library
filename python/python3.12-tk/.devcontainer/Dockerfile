@@ -1,4 +1,4 @@
-FROM openjdk:17-slim-bullseye
+FROM python:3.12
 
 ENV CATO_CERTIFICATION_PATH=/usr/share/ca-certificates/CatoNetworksTrustedRootCA.pem
 ENV USER=dirbato
@@ -9,7 +9,7 @@ RUN apt-get update -y && apt-get upgrade -y && \
     curl -sL https://myvpn.catonetworks.com/public/certificates/CatoNetworksTrustedRootCA.pem -o ${CATO_CERTIFICATION_PATH} && \
     echo "CatoNetworksTrustedRootCA.pem" | sudo tee -a /etc/ca-certificates.conf && \
     update-ca-certificates && \
-    apt-get install -y vim unzip jq tar gzip git software-properties-common python3-tk libx11-dev
+    apt-get install -y vim unzip jq tar gzip git software-properties-common libx11-dev python3-tk
 
 # User
 RUN addgroup --system ${USER} && \
@@ -23,6 +23,5 @@ RUN addgroup --system ${USER} && \
 # starship
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y && \
     echo 'eval "$(starship init bash)"' >> /home/${USER}/.bashrc
-
 
 USER ${USER}

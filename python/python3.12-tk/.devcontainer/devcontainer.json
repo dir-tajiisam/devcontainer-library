@@ -1,0 +1,59 @@
+{
+  "name": "Python Template",
+  "dockerFile": "./Dockerfile",
+  // "remoteUser": "dirbato",
+  "updateRemoteUserUID": true,
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "donjayamanne.githistory",
+        "mosapride.zenkaku",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "ms-python.mypy-type-checker",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "njpwerner.autodocstring",
+        "oderwat.indent-rainbow",
+        "rvest.vs-code-prettier-eslint",
+        "streetsidesoftware.code-spell-checker",
+        "yzhang.markdown-all-in-one",
+        "42Crunch.vscode-openapi",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "defaultFormatter": "esbenp.prettier-vscode",
+        "python.formatting.provider": "none",
+        "python.envFile": "${workspaceFolder}/.vscode/.env",
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+          },
+          "flake8.lintOnChange": true
+        },
+        "python.testing.pytestPath": ".venv/bin/pytest",
+        "python.testing.pytestArgs": ["tests", "-vv"],
+        "python.testing.pytestEnabled": true,
+        "[typescript]": {
+          "editor.formatOnSave": true
+        },
+        "flake8.args": ["--max-line-length=120", "--ignore=E203,W503,W504"],
+        "black-formatter.args": ["--line-length=120"],
+        "mypy-type-checker.args": ["--ignore-missing-imports", "--disallow-untyped-defs"],
+        "[TypeScript]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+        }
+      }
+    }
+  },
+  "postStartCommand": "bash ./.devcontainer/postStartCommand.sh",
+}
